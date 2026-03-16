@@ -1,0 +1,15 @@
+# Template file for 'distrobox'
+pkgname=distrobox
+version=1.8.2.4
+revision=1
+short_desc="Use any linux distribution inside your terminal."
+maintainer="Simeon Widdis <sawiddis@gmail.com>"
+license="GPL-3.0-or-later"
+homepage="https://distrobox.it"
+distfiles="https://github.com/89luca89/distrobox/archive/${version}.tar.gz"
+checksum=83eab6ba893dce56f0523a70ebfcf2a78f7785637a6895255777ef1b72d4eb89
+
+do_install() {
+	./install --prefix "${DESTDIR}/usr"
+	find docs -name "*.md" -exec vdoc {} \;
+}
